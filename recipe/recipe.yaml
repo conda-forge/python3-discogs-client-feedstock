@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: python3-discogs-client
-  version: 2.8
+  version: "2.9"
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/python3_discogs_client-${{ version }}.tar.gz
-  sha256: 0f2c77f4ff491a6ef60fe892032028df899808e65efcd48249b4ecf21146b33b
+  sha256: f588ad0c998d04b72e1eadcde9b353023cae6c4a3af6d81db15029c83eec5df1
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
