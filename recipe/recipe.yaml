@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: python3-discogs-client
-  version: "2.9"
+  version: "2.10"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/python3_discogs_client-${{ version }}.tar.gz
-  sha256: f588ad0c998d04b72e1eadcde9b353023cae6c4a3af6d81db15029c83eec5df1
+  sha256: 3f9b2f53c51e6b2fbb1bd59c3120c4a06c3aa04e6c806e7bef68b533077f7a2f
 
 build:
   number: 0
@@ -33,7 +33,9 @@ tests:
       imports:
         - discogs_client
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
 
 about:
   summary: Python API client for Discogs
